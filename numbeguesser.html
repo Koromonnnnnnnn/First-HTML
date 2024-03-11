@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Number Guessing Game</title>
+
+        <!##########################################################################>
+        <!-- CSS: Styles for the webpage -->
+        <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+        img {
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 5px;
+  width: 150px;
+}
+        #result {
+            margin-top: 20px;
+            font-size: 20px;
+            color: blue;
+        }
+    </style>
+    </head>
+    <body>
+
+        <!##########################################################################>
+        <!-- HTML: Structure and content of the webpage -->
+
+        <h2>Guess the Number Game</h2>
+        <p>I'm thinking of a number between 1 and 50. Can you guess it?</p>
+
+        <!-- Input field for the guess -->
+        <input type="number" id="guess" min="1" max="100">
+        <button onclick="checkGuess()">Guess</button>
+        <img src="paris.jpg" alt="Paris">
+
+        <!-- Paragraph where the result will be displayed -->
+        <p id="result"></p>
+
+        <!##########################################################################>
+        <!-- JavaScript: Script for the game's functionality -->
+
+        <script>
+        // Generate a random number between 1 and 50
+        var secretNumber = Math.floor(Math.random() * 100) + 1;
+	console.log(secretNumber) //for debugging purposes. press ctrl+shift+j to see this!
+
+
+        function checkGuess() {
+            // Retrieve the user's guess
+            var userGuess = document.getElementById('guess').value;
+
+            // Compare the guess to the secret number
+            if (userGuess == secretNumber) {
+                document.getElementById('result').innerText = 'Congratulations! You guessed it!';
+            } else if (userGuess < secretNumber) {
+                document.getElementById('result').innerText = 'Too low. Try again!';
+            } else if (userGuess >= secretNumber - 5) {
+                document.getElementById('result').innerText = 'You are really close';
+            } else {
+                document.getElementById('result').innerText = 'Too high. Try again!';
+            }
+        }
+    </script>
+
+    </body>
+</html>
