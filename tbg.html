@@ -46,10 +46,11 @@
             },
             'laboratory': {
                 'title': 'The Alchemist\'s Laboratory',
-                'description': 'Strange potions bubble on the stove. There\'s a door to the west.',
+                'description': 'Strange potions bubble on the stove. There\'s a door to the west. North to go back.',
                 'image': 'laboratory.jpg',
                 'directions': {
-                    'west': 'dungeon'
+                    'west': 'dungeon',
+                    'north': 'start'
                 }
             },
             'dungeon': {
@@ -57,7 +58,9 @@
                 'description': 'Eerie lights flicker. There\'s a door to the east.',
                 'image': 'dungeon.gif',
                 'directions': {
-                    'east': 'throne'
+                    'east': 'throne',
+                    'west': 'throne'
+
                 }
             },
             'throne': {
